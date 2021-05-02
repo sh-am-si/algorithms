@@ -1,6 +1,4 @@
 
-
-from typing import List, Tuple
 import numpy as np
 
 
@@ -24,6 +22,5 @@ class QuickFindUF:
     def connection_number(self) -> int:
         return np.unique(self.ids).shape[0]
 
-
     def __str__(self) -> str:
-        return str([(id, v) for id, v in enumerate(self.ids)])
+        return str([(ind, v) for ind, v in enumerate(self.ids)])
