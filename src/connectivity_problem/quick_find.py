@@ -1,15 +1,12 @@
-
 import numpy as np
 
 
 class QuickFindUF:
-
     def __init__(self, num: int) -> None:
         self.num = num
         self.ids = np.arange(self.num, dtype=np.int)
 
     def union(self, p: int, q: int) -> None:
-
         assert p < self.num and q < self.num
         p_id = self.ids[p]
         q_id = self.ids[q]

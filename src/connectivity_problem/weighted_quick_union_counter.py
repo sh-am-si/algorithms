@@ -1,7 +1,3 @@
-
-
-from typing import List, Tuple
-
 import numpy as np
 
 
@@ -13,7 +9,7 @@ class WeightedQuickUnionUFCounter:
     ROOT of i is ids[ids[... ids[i] ...]]
     only smaller tree added down below
 
-    Authors suggest to maintain an array size 
+    Authors suggest to maintain an array size
     """
 
     def __init__(self, num: int) -> None:
@@ -29,7 +25,6 @@ class WeightedQuickUnionUFCounter:
         return ind, counter
 
     def union(self, p: int, q: int) -> None:
-
         assert p < self.num and q < self.num
         p_root, p_counter = self.get_root(p)
         q_root, q_counter = self.get_root(q)

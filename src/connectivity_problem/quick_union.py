@@ -1,6 +1,3 @@
-
-
-from typing import List, Tuple
 import numpy as np
 
 
@@ -21,7 +18,6 @@ class QuickUnionUF:
         return ind
 
     def union(self, p: int, q: int) -> None:
-
         assert p < self.num and q < self.num
         p_root = self.get_root(p)
         q_root = self.get_root(q)
