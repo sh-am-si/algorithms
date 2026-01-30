@@ -6,4 +6,3 @@ jupyter_contrib_nbextensions   #https://medium.com/somosfit/version-control-on-j
 autopep8
 tqdm
 networkx
-rope # refactoring for VS Code

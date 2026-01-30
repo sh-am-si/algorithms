@@ -1,4 +1,3 @@
-
 import numpy as np
 
 
@@ -10,7 +9,7 @@ class WeightedQuickUnionUF:
     ROOT of i is ids[ids[... ids[i] ...]]
     only smaller tree added down below
 
-    Authors suggest to maintain an array size 
+    Authors suggest to maintain an array size
     """
 
     def __init__(self, num: int) -> None:
@@ -25,7 +24,6 @@ class WeightedQuickUnionUF:
         return ind
 
     def union(self, p: int, q: int) -> None:
-
         assert p < self.num and q < self.num
         p_root = self.get_root(p)
         q_root = self.get_root(q)
