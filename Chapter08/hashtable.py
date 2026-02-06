@@ -80,7 +80,7 @@ class HashTable:
     def get_quadratic(self, key):
         h = self._hash(key)
         j = 1
-        while self.slots[h] != None:
+        while self.slotsi [h] != None:
             if self.slots[h].key == key:
                 return self.slots[h].value
             h = (h+ j*j) % self.size
@@ -101,12 +101,12 @@ class HashTable:
         item = HashItem(key, value)
         h = self._hash(key)
         j = 1    
-        while self.slots[h] != None:
+        while self.slots[h] is not None:
             if self.slots[h].key == key:
                 break
             h = (h + j * (self.prime_num - (self.h2(key) % self.prime_num))) % self.size
             j = j+1
-        if self.slots[h] == None:
+        if self.slots[h] is None:
             self.count += 1
         self.slots[h] = item
         self.check_growth()
@@ -114,7 +114,7 @@ class HashTable:
     def get_double_hashing(self, key):
         h = self._hash(key)
         j = 1
-        while self.slots[h] != None:
+        while self.slots[h] is not None:
             if self.slots[h].key == key:
                 return self.slots[h].value
             h = (h + j * (self.prime_num - (self.h2(key) % self.prime_num))) % self.size
@@ -133,10 +133,10 @@ class HashTable:
     
     
 ht = HashTable()
-ht.put_quadratic(“good”, “eggs”)
-ht.put_quadratic(“ad”, “packt”)
-ht.put_quadratic(“ga”, “books”)
-v = ht.get_quadratic(“ga”)
+ht.put_quadratic("good", "eggs")
+ht.put_quadratic("ad", "packt")
+ht.put_quadratic("ga", "books")
+v = ht.get_quadratic("ga")
 print(v)
       
       
@@ -146,8 +146,8 @@ ht.put("better", "ham")
 ht.put("best", "spam") 
 ht.put("ad", "do not") 
 ht.put("ga", "collide")
-ht.put(“awd”, “do not”)
-ht.put(“add”, “do not”)
+ht.put("awd", "do not")
+ht.put("add", "do not")
 ht.checkGrow()
 
 for key in ("good", "better", "best", "worst", "ad", "ga"): 
@@ -156,17 +156,17 @@ for key in ("good", "better", "best", "worst", "ad", "ga"):
 
 
 ht = HashTable()
-ht.put_double_hashing(“good”, “eggs”)
-ht.put_double_hashing(“better”, “spam”)
-ht.put_double_hashing(“best”, “cool”)
-ht.put_double_hashing(“ad”, “donot”)
-ht.put_double_hashing(“ga”, “collide”)
-ht.put_double_hashing(“awd”, “hello”)
-ht.put_double_hashing(“addition”, “ok”)
-for key in (“good”, “better”, “best”, “worst”, “ad”, “ga”):
-v = ht.get_double_hashing(key)
-print(v)
-print(“The number of elements is: {}”.format(ht.count))        
+ht.put_double_hashing("good", "eggs")
+ht.put_double_hashing("better", "spam")
+ht.put_double_hashing("best", "cool")
+ht.put_double_hashing("ad", "donot")
+ht.put_double_hashing("ga", "collide")
+ht.put_double_hashing("awd", "hello")
+ht.put_double_hashing("addition", "ok")
+for key in ("good", "better", "best", "worst", "ad", "ga"):
+    v = ht.get_double_hashing(key)
+    print(v)
+print("The number of elements is: {}".format(ht.count))        
         
     
 ht = HashTable()
